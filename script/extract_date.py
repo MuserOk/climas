@@ -127,3 +127,4 @@ while True:
         break
     else:
         print(f"La ciudad '{ciudad}' no fue encontrada. Por favor, intenta nuevamente.")
+
