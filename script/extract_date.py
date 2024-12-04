@@ -75,9 +75,9 @@ def load_data_to_sqlserver(data):
 
         # Verificar si la tabla 'WeatherData' existe y crearla si no existe
         cursor.execute("""
-            IF NOT EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_NAME = 'WeatherData')
+            IF NOT EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_NAME = 'Weather_db')
             BEGIN
-                CREATE TABLE WeatherData (
+                CREATE TABLE Weather_db (
                     ciudad VARCHAR(100),
                     temperatura FLOAT,
                     humedad INT,
@@ -89,11 +89,11 @@ def load_data_to_sqlserver(data):
             END
         """)
         conn.commit()
-        print("Tabla 'WeatherData' verificada o creada exitosamente.")
+        print("Tabla 'Weather_db' verificada o creada exitosamente.")
 
         # Insertar los datos transformados en la tabla 'WeatherData'
         cursor.execute("""
-            INSERT INTO WeatherData (ciudad, temperatura, humedad, presion, descripcion_clima, velocidad_viento, marca_temporal)
+            INSERT INTO Weather_db (ciudad, temperatura, humedad, presion, descripcion_clima, velocidad_viento, marca_temporal)
             VALUES (?, ?, ?, ?, ?, ?, ?)
         """, (
             data["ciudad"],
