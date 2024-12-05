@@ -1,0 +1,7 @@
+#esto debes copiar y completar en un archivo raiz, con extension .env
+
+OPENWEATHER_API_KEY=tu_key
+DB_SERVER=nombre
+DB_NAME=nombre_tabla
+DB_USER=sanombre_user
+DB_PASSWORD=contraseña_user_db
